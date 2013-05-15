@@ -35,12 +35,22 @@ class DaatesController < ApplicationController
       flash[:alert] = "Date has not been updated."
       render :action => "edit"
     end
-   end
+  end
 
    def destroy
     @daate = Daate.find(params[:id])
     @daate.destroy
     flash[:notice] = "Date has been deleted."
     redirect_to daates_path
+  end
+
+  def future
+    @daates = Daate.all
+    @daates.each do |daate|
+      if Date.new(daate.year, daate.month, daate.day) < Date.today
+        @daates.delete(daate)
+      end
+    end
+    render :action => "index"
   end
 end

@@ -2,7 +2,11 @@ DateTracker::Application.routes.draw do
 
   root :to => 'daates#index'
 
-  resources :daates
+  resources :daates do
+    collection do
+      get 'future'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
