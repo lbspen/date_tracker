@@ -12,7 +12,8 @@ class DaatesController < ApplicationController
       flash[:notice] = "Date has been created."
       redirect_to @daate
     else
-
+      flash[:alert] = "Date has not been created."
+      render :action => "new"
     end
   end
 
