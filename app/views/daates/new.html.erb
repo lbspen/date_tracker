@@ -1,24 +1,2 @@
 <h2>New Date</h2>
-<%= form_for(@daate) do |f| %>
-  <%= f.error_messages %> <br />
-  <p>
-    <%= f.label :month %> <br />
-    <%= f.text_field :month %>
-  </p>
-
-  <p>
-    <%= f.label :day %> <br />
-    <%= f.text_field :day %>
-  </p>
-
-  <p>
-    <%= f.label :year %> <br />
-    <%= f.text_field :year %>
-  </p>
-
-  <p>
-    <%= f.label :event %> <br />
-    <%= f.text_field :event %>
-  </p>
-  <%= f.submit "Create Date" %>
-<% end %>
+<%= render 'form' %>
