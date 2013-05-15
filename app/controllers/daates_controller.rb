@@ -36,4 +36,11 @@ class DaatesController < ApplicationController
       render :action => "edit"
     end
    end
+
+   def destroy
+    @daate = Daate.find(params[:id])
+    @daate.destroy
+    flash[:notice] = "Date has been deleted."
+    redirect_to daates_path
+  end
 end

@@ -2,4 +2,6 @@
 <p>
   <%= @daate.month %>/<%= @daate.day %>/<%= @daate.year %>
   <%= link_to "Edit Date", edit_daate_path(@daate) %>
+  <%= link_to "Delete Date", daate_path(@daate),:method => :delete,
+  :confirm => "Are you sure you want to delete this date?" %>
 </p>
