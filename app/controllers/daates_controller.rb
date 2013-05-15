@@ -1,5 +1,6 @@
 class DaatesController < ApplicationController
   def index
+    @daates = Daate.all
   end
 
   def new

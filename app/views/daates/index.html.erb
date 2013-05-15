@@ -1,1 +1,8 @@
-<%= link_to "New Date", new_daate_path %>
+<h2>Dates</h2>
+<ul>
+  <%= link_to "New Date", new_daate_path %>
+  <% @daates.each do |daate| %>
+    <li><%= link_to daate.event, daate %> 
+      - <%= daate.month %>/<%= daate.day %>/<%= daate.year %></li>
+  <% end %>
+</ul>
